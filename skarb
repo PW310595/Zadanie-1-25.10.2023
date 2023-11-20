@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+int main() {
+		double d;
+		double wynik;
+		int k;
+		int TreasureX=76;
+		int TreasureY=91;
+		int TwojeX;
+		int TwojeY;
+		std::cout << "Podaj X i Y \n";
+		std::cin >> TwojeX >> TwojeY;
+		std::cout << "Podaj swoją kondycje w [km/h] \n";
+		std::cin >> k;
+		
+		d = sqrt((((TreasureX-TwojeX)*(TreasureX-TwojeX))+((TreasureY-TwojeY)*(TreasureY-TwojeY))));
+		wynik = d/k;
+		std::cout << "Odleglosc od skarbu: " << d << std::endl;
+		if(wynik<=10) {
+			std::cout << "Joe poczeka \n";
+		} else {
+			std::cout << "Joe nie poczeka \n";
+		}
+}
