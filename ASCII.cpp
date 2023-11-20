@@ -15,7 +15,7 @@ int main() {
         }
     }
 
-    cout << "Zaszyfrowana wiadomoœæ: " << msg << endl;
+    cout << "Zaszyfrowana wiadomoÅ“Ã¦: " << msg << endl;
 
     return 0;
 }
