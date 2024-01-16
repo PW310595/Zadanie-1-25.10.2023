@@ -1,3 +1,11 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
+template<typename T>
 void Losowo3(std::vector<T>& tablica, int roz) {
 
     for (int i = 0; i < roz; i++) {
