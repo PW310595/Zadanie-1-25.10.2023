@@ -1,0 +1,68 @@
+void sortowanie_babelkowe(int* tablica, int rozmiar)
+{
+    for (int i=0; i < rozmiar; i++)
+    {
+        for (int j=1; j < rozmiar; j++)
+        {
+            if (tablica[j] < tablica[j - 1])
+            {
+                int zmiana = tablica[j];
+                tablica[j] = tablica[j - 1];
+                tablica[j - 1] = zmiana;
+            }
+        }
+    }
+}
+
+void sortowanie_wybieranie(int* tablica, int rozmiar)
+{
+    for (int i = 0; i < rozmiar; i++)
+    {
+        int k = i;
+        int x = tablica[i];
+        for (int j = i + 1; j < rozmiar; j++)
+        {
+            if (tablica[j] < x)
+            {
+                k = j;
+                x = tablica[j];
+            }
+        }
+        tablica[k] = tablica[i];
+        tablica[i] = x;
+    }
+
+}
+
+void sortowanie_wstawianie(int* tablica, int rozmiar)
+{
+   for (int i = 1; i < rozmiar; i++)
+    {
+        int x = tablica[i];
+        int j = i - 1;
+        while (j >= 0 && x < tablica[j])
+        {
+            tablica[j + 1] = tablica[j];
+            j = j - 1;
+        }
+        tablica[j + 1] = x;
+    }
+}
+
+void sortowanie_babelkowe_modyfikacja(int* tablica, int rozmiar)
+{
+    bool zmiana;
+    for (int i = 0; i < rozmiar; i++)
+    {
+        zmiana = false; 
+        for (int j = 1; j < rozmiar - i; j++)
+        {
+            if (tablica[j - 1] > tablica[j])
+            {
+                swap(tablica[j - 1], tablica[j]);
+                zmiana = true;
+            }
+        }
+        if (!zmiana) break;
+    }
+}
