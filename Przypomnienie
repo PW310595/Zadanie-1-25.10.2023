@@ -1,68 +1,56 @@
-void sortowanie_babelkowe(int* tablica, int rozmiar)
+void sortowanie_shella(int* A, int n)
 {
-    for (int i=0; i < rozmiar; i++)
+    int h = 1;
+    while (h < n / 9)
     {
-        for (int j=1; j < rozmiar; j++)
+        h = 3 * h + 1;
+    }
+    while (h > 0)
+    {
+        for (int i = h; i < n; i++)
         {
-            if (tablica[j] < tablica[j - 1])
+            int x = A[i];
+            int j = i;
+
+            while (j >= h && x < A[j - h])
             {
-                int zmiana = tablica[j];
-                tablica[j] = tablica[j - 1];
-                tablica[j - 1] = zmiana;
+                A[j] = A[j - h];
+                j -= h;
             }
+            A[j] = x;
         }
+        h /= 3;
     }
 }
 
-void sortowanie_wybieranie(int* tablica, int rozmiar)
+void sortowanie_szybkie_rek(int* tab, int d, int g)
 {
-    for (int i = 0; i < rozmiar; i++)
+  
+    if (d < g)
     {
-        int k = i;
-        int x = tablica[i];
-        for (int j = i + 1; j < rozmiar; j++)
+        int t = tab[d];
+        int s = d;
+
+        for (int i = d + 1; i <= g; i++)
         {
-            if (tablica[j] < x)
+            if (tab[i] < t)
             {
-                k = j;
-                x = tablica[j];
+                s = s + 1;
+                swap(tab[s], tab[i]);
             }
         }
-        tablica[k] = tablica[i];
-        tablica[i] = x;
-    }
-
-}
-
-void sortowanie_wstawianie(int* tablica, int rozmiar)
-{
-   for (int i = 1; i < rozmiar; i++)
-    {
-        int x = tablica[i];
-        int j = i - 1;
-        while (j >= 0 && x < tablica[j])
-        {
-            tablica[j + 1] = tablica[j];
-            j = j - 1;
-        }
-        tablica[j + 1] = x;
+        swap(tab[d], tab[s]);
+        sortowanie_szybkie_rek(tab, d, s-1);
+        sortowanie_szybkie_rek(tab, s+1, g);
     }
 }
 
-void sortowanie_babelkowe_modyfikacja(int* tablica, int rozmiar)
+void sortowanie_szybkie(int* tablica, int rozmiar)
 {
-    bool zmiana;
-    for (int i = 0; i < rozmiar; i++)
-    {
-        zmiana = false; 
-        for (int j = 1; j < rozmiar - i; j++)
-        {
-            if (tablica[j - 1] > tablica[j])
-            {
-                swap(tablica[j - 1], tablica[j]);
-                zmiana = true;
-            }
-        }
-        if (!zmiana) break;
-    }
+    sortowanie_szybkie_rek(tablica, 0, rozmiar - 1);
+}
+
+void standard_sort(int* tablica, int rozmiar)
+{
+    std::sort(tablica, tablica + rozmiar);
 }
