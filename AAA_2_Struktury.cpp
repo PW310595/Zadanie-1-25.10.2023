@@ -1,4 +1,5 @@
-nagłówke.h
+pytanie.cpp
+	
 
 #include <iostream>
 #include "N:\Reszta\projekty\nauka_1\ConsoleApplication1\pytanie.h"
