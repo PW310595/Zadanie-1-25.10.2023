@@ -16,3 +16,4 @@ Przykładowo, wektor (3, 4) po normalizacji to (0.6, 0.8), gdyż jego długość
 void show() const: Metoda show wyświetla współrzędne wektora w formacie (x, y).
 
 double dist(const Vector2D& other) const: Metoda dist zwraca odległość między bieżącym wektorem a innym wektorem other, obliczaną jako odległość euklidesowa.
+https://cpp0x.pl/artykuly/Inne-artykuly/Przeciazanie-operatorow-w-C++/15
