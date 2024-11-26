@@ -1,6 +1,6 @@
 Szablony funkcji pozwalają na definiowanie funkcji, które mogą działać z różnymi typami danych.
 Pozwala nie przeciazac funkcji, w  sensie szablony przyjumją dowolny typ danych
-template <typename Typ> Kompilator sam wybiera sobie typ
+template <typename Typ> Kompilator sam wybiera sobie typa
 ======================================
 using namespace std;
 template < int ilosc >
