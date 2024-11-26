@@ -12,7 +12,7 @@ std::overflow_error	Przepełnienie liczby
 std::underflow_error	Niedopełnienie liczby
 
 ==========================================================================================================
-#include <iostream>
+#include <iostream>aaa
 
 using namespace std;
 
