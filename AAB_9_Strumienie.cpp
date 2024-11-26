@@ -8,7 +8,7 @@ int main() {
 
     // Wypisanie tekstu do pliku
     plik_wyjsciowy << "To jest tekst zapisany do pliku." << std::endl;
-
+//
     // Zamknięcie pliku
     plik_wyjsciowy.close();
 
